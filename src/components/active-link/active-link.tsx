@@ -15,6 +15,11 @@ export function ActiveLink({ children, href, ...rest  }: ActiveLinkProps ) {
         router.asPath.startsWith(String(rest.as));
 
     return (
-       <Link href={href} className={cn("border-2 text-sm font-medium transition-colors hover:text-blue-300", isCurrentPath ? 'text-blue-500' : 'text-muted-foreground')}>{children}</Link> 
+       <Link 
+            href={href} 
+            className={
+                cn("border-2 text-sm font-medium transition-colors hover:text-blue-300", isCurrentPath ? 'text-blue-500' : 'text-muted-foreground')
+            }>{children}
+        </Link> 
     )
 }
