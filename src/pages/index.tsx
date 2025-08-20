@@ -1,8 +1,12 @@
+import { HeroSection } from "@/components/hero-section";
 
 
 export default function Home() {
   return (
-    <div className="flex-1">
+    <div>
+      <article className="flex flex-col">
+        <HeroSection />
+      </article>
     </div>
   );
 }
