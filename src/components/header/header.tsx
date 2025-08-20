@@ -9,10 +9,10 @@ export function Header() {
       <div className="flex justify-between items-center mx-auto w-full h-16 px-4 sm:px-6 lg:px-80">
         <Logo />
 
-        <nav className="border flex justify-between items-center gap-6">
+        <nav className="flex justify-between items-center gap-6">
           <ActiveLink href="/">Inicio</ActiveLink>
           <ActiveLink href="/blog">Blog</ActiveLink>
-          <Button asChild>
+          <Button variant={"secondary"} asChild>
             <Link href="/comecar">Começar</Link>
           </Button>
         </nav>
