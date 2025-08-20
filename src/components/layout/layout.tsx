@@ -11,7 +11,7 @@ const fontInter = Inter({ subsets: ['latin'] });
 export function Layout( { children }: LayoutProps) {
     return (
         // todos os textos dentro desse <div> vão usar a fonte Inter, sem precisar importar CSS manualmente.
-        <div className={`${fontInter.className} bg-gray-700 relative flex min-h-screen flex-col dark`}>
+        <div className={`${fontInter.className} bg-gray-400 relative flex min-h-screen flex-col dark`}>
             <Header />
             <main className="flex-1 flex flex-col mb-12">
                 {children}
