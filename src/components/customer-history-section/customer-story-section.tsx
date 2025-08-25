@@ -1,4 +1,4 @@
-import { Content, PT_Sans_Caption } from "next/font/google";
+import { PT_Sans_Caption } from "next/font/google";
 import Image from "next/image";
 
 const ptSanstCaption = PT_Sans_Caption({
