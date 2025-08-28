@@ -17,7 +17,7 @@ export function CallToAction() {
             <Store className="text-cyan-100" />
           </div>
           <h2
-            className={`ptSansCaption.className text-gray-100 text-heading-lg text-balance`}
+            className="font-sans text-gray-100 text-heading-lg text-balance"
           >
             Crie uma loja online e inicie suas vendas ainda hoje
           </h2>
