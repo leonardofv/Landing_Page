@@ -1,6 +1,6 @@
-import { Inter, PT_Sans_Caption } from "next/font/google";
-import { Header } from "../header";
-import { Footer } from "../footer";
+import { Inter } from "next/font/google";
+import { Header } from "./header";
+import { Footer } from "./footer";
 
 const fontInter = Inter({ 
     subsets: ['latin'], 
