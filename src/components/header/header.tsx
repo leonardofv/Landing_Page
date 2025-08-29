@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ActiveLink } from "@/components/active-link/active-link";
-import { Logo } from "@/components/logo";
+import { Button } from "../ui/button";
+import { ActiveLink } from "../active-link/active-link";
+import { Logo } from "../logo";
 
 export function Header() {
   return (
-    <header className="top-0 z-50 w-full border-b py-3 border-white/20">
+    <header className="top-0 z-50 w-full border-b border-white/20">
       <div className="flex justify-between items-center mx-auto w-full h-16 px-4 sm:px-6 lg:px-80">
         <Logo />
 

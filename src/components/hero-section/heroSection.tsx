@@ -1,5 +1,5 @@
 import { ArrowRight, Clock, Store } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ export function HeroSection() {
           </h1>
 
           <div>
-            <div className="flex flex-col gap-2">
+            <div>
               <div className="flex items-center gap-2">
                 <Clock className="text-cyan-100" />
                 <span className="text-gray-200">

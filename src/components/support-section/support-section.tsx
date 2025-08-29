@@ -4,7 +4,7 @@ export function SupportSection() {
   return (
     <section className="relative p-8 md:py-10 bg-gray-700">
 
-      <div className="bg-[url('/background-features.svg')] absolute inset-0 opacity-70 hidden md:block bg-cover bg-center bg-no-repeat"/>
+      <div className="bg-[url('/background-features.svg')] absolute inset-0 opacity-90 hidden md:block bg-cover bg-center bg-no-repeat"/>
 
 
       <div className="container flex flex-col items-center gap-12 relative">
