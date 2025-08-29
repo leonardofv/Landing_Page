@@ -6,7 +6,7 @@ import { Logo } from "../logo";
 export function Header() {
   return (
     <header className="top-0 z-50 w-full border-b border-white/20">
-      <div className="flex justify-between items-center mx-auto w-full h-16 px-4 sm:px-6 lg:px-80">
+      <div className="flex justify-between items-center mx-auto w-full h-16 px-4 sm:px-6 lg:px-8">
         <Logo />
 
         <nav className="flex justify-between items-center gap-6">
