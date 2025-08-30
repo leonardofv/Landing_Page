@@ -4,7 +4,7 @@ import {
   FeatureSection,
   HeroSection,
   SupportSection,
-} from "@/components/templates/landing-page/sections";
+} from "@/templates/landing-page/sections";
 
 export function LandingPage() {
   return (
