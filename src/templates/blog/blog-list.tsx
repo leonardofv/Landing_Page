@@ -29,7 +29,17 @@ export function BlogList() {
         </div>
       </header>
       {/* Listagem dos posts */}
-      <PostCard />
+      <PostCard 
+        slug="/assests/post-01.png"
+        image="/assets/post-01.png"
+        date="16/09/2025"
+        title="Teste de Card"
+        description="Testando dados dinâmicos"
+        author={ {
+          name: 'Leonardo',
+          avatar: '/customer-01.png'
+        } }
+      />
     </div>
   );
 }
