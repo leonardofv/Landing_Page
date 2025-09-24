@@ -32,12 +32,12 @@ export function PostCard({ slug, image, date, title, description, author }: Post
                         src={image}
                         alt=""
                         width={288}
-                        height={140}
+                        height={144}
                         className="w-full h-40 object-cover object-center rounded-t-[8px]"
                     />
                 </div>
                 {/* Post info */}
-                <div className="border px-2 mt-4 space-y-4">
+                <div className="px-2 mt-4 space-y-4">
                     <h2 className="text-gray-100 text-heading-sm line-clamp-3">{title}</h2>
                     <p className="text-gray-300 text-body-sm line-clamp-3">
                        {description} 
