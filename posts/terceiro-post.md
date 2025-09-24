@@ -4,7 +4,7 @@ description: O Site.Set oferece tudo o que você precisa para criar uma loja onl
 date: 2024/11/16 10:20:00
 image: /assets/post-02.png
 author:
-  name: Roberta Miranda
+  name: Roberta
   avatar: /customer-01.png
 ---
 
