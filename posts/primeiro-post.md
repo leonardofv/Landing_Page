@@ -4,7 +4,7 @@ description: Se você está buscando uma maneira simples e eficaz de vender seus
 date: 2024/12/20 10:20:00
 image: /assets/post-01.png
 author:
-  name: Leonardo Fonteles
+  name: Leonardo
   avatar: /customer-01.png
 ---
 
