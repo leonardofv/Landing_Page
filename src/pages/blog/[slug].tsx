@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Avatar } from "@/components/avatar";
 import { Markdown } from "@/components/markdown";
+import { Button } from "@/components/ui/button";
 
 export default function PostPage() {
   const router = useRouter();
@@ -75,6 +76,24 @@ export default function PostPage() {
               />
             </div>
           </article>
+
+          <aside className="space-y-6">
+            <div className="bg-gray-400 p-4 md:p-6 rounded-lg">
+              <h2 className="font-gray-100 mb-4 text-heading-xs">Compartilhar</h2>
+
+              <div className="space-y-3">
+                {[{ key: '1', providerName: 'LinkedIn' }, { key: '2', providerName: 'Facebook' }].map((provider) => (
+                  <Button
+                    key={provider.key}
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                  >
+                    {provider.providerName}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
       </main>
     </div>
