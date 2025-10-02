@@ -15,7 +15,7 @@ import { Markdown } from "@/components/markdown";
 export default function PostPage() {
   const router = useRouter();
   const slug = router.query.slug as string;
-  const post = allPosts.find((post) => post.slug.toLowerCase() == slug)!;
+  const post = allPosts.find((post) => post.slug.toLowerCase() === slug)!;
 
   const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR');
 
@@ -59,6 +59,7 @@ export default function PostPage() {
                   <Avatar.Image
                       src={post?.author.avatar}
                       alt={post?.title}
+                      size="sm"
                   />
                 <Avatar.Content>
                   <Avatar.Title>{post?.author.name}</Avatar.Title>
