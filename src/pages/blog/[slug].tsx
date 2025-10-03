@@ -12,17 +12,27 @@ import {
 import { Avatar } from "@/components/avatar";
 import { Markdown } from "@/components/markdown";
 import { Button } from "@/components/ui/button";
+import { useShare } from "@/hooks";
 
 export default function PostPage() {
   const router = useRouter();
   const slug = router.query.slug as string;
-  const post = allPosts.find((post) => post.slug.toLowerCase() === slug)!;
+  const post = allPosts.find(
+    (post) => post.slug.toLowerCase() === slug.toLowerCase()
+  )!;
 
-  const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR');
+  const publishedDate = new Date(post?.date).toLocaleDateString("pt-BR");
+  const postUrl = `http://localhost:3000/blog/${slug}`;
+
+  const { shareButtons } = useShare({
+    url: postUrl,
+    title: post.title,
+    text: post.description,
+  });
 
   return (
-    <div className="container space-y-12 px-4 md:px-8">
-      <main className="mt-10 text-gray-100">
+    <main className="mt-10 text-gray-100">
+      <div className="container space-y-12 px-4 md:px-8">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -57,45 +67,49 @@ export default function PostPage() {
                 {post?.title}
               </h1>
               <Avatar.Container>
-                  <Avatar.Image
-                      src={post?.author.avatar}
-                      alt={post?.title}
-                      size="sm"
-                  />
+                <Avatar.Image
+                  src={post?.author.avatar}
+                  alt={post?.title}
+                  size="sm"
+                />
                 <Avatar.Content>
                   <Avatar.Title>{post?.author.name}</Avatar.Title>
                   <Avatar.Description>
-                    <time dateTime={post?.date}>Publicado em {publishedDate}</time>
+                    <time dateTime={post?.date}>
+                      Publicado em {publishedDate}
+                    </time>
                   </Avatar.Description>
                 </Avatar.Content>
               </Avatar.Container>
             </header>
             <div className="px-4 mt-12 md:px-6 lg:px-12">
-              <Markdown
-                content={post.body.raw}
-              />
+              <Markdown content={post.body.raw} />
             </div>
           </article>
 
           <aside className="space-y-6">
             <div className="bg-gray-400 p-4 md:p-6 rounded-lg">
-              <h2 className="font-gray-100 mb-4 text-heading-xs">Compartilhar</h2>
+              <h2 className="font-gray-100 mb-4 text-heading-xs">
+                Compartilhar
+              </h2>
 
               <div className="space-y-3">
-                {[{ key: '1', providerName: 'LinkedIn' }, { key: '2', providerName: 'Facebook' }].map((provider) => (
+                {shareButtons.map((provider) => (
                   <Button
-                    key={provider.key}
+                    key={provider.provider}
                     variant="outline"
                     className="w-full justify-start gap-2"
+                    onClick={() => provider.action()}
                   >
-                    {provider.providerName}
+                    {provider.icon}
+                    {provider.name}
                   </Button>
                 ))}
               </div>
             </div>
           </aside>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

@@ -7,6 +7,8 @@ export type ShareConfig = {
     text?: string,
 }
 
+export type SocialProvider = 'linkedin' | 'facebook' | 'slack';
+
 
 export const SOCIAL_PROVIDERS = {
 
@@ -16,12 +18,12 @@ export const SOCIAL_PROVIDERS = {
         shareUrl: (config: ShareConfig) => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(config.url)}`
     },
     facebook: {
-        name: 'LinkedIn',
+        name: 'Facebook',
         icon: <Facebook className="h-4 w-4" />,
         shareUrl: (config: ShareConfig) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(config.url)}`
     },
     slack: {
-        name: 'LinkedIn',
+        name: 'Slack',
         icon: <Slack className="" />,
         shareUrl: (config: ShareConfig) => `https://slack.com/share?url=${encodeURIComponent(config.url)}&text=${encodeURIComponent(config.title || '')}`
     }
