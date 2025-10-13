@@ -22,8 +22,8 @@ export function BlogList({ posts }: BlogListProps) {
       )
     : posts;
 
-  // const posts: Post[] = [];
-  const hasPosts = posts.length > 0;
+  //usat postList porque list sempre vai ter post
+  const hasPosts = postList.length > 0;
 
   return (
     <div className="flex flex-col py-24 flex-grow h-full">

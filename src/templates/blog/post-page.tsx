@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { allPosts } from "contentlayer/generated";
+import { Post } from "contentlayer/generated";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,15 +13,14 @@ import { Markdown } from "@/components/markdown";
 import { Button } from "@/components/ui/button";
 import { useShare } from "@/hooks";
 
-export function PostPage() {
-  const router = useRouter();
-  const slug = router.query.slug as string;
-  const post = allPosts.find(
-    (post) => post.slug.toLowerCase() === slug.toLowerCase()
-  )!;
+export type PostPageProps = {
+  post: Post;
+}
+
+export function PostPage({ post }: PostPageProps) {
 
   const publishedDate = new Date(post?.date).toLocaleDateString("pt-BR");
-  const postUrl = `http://localhost:3000/blog/${slug}`;
+  const postUrl = `http://localhost:3000/blog/${post.slug}`;
 
   const { shareButtons } = useShare({
     url: postUrl,
