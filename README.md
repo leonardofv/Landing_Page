@@ -26,5 +26,3 @@ npm run dev
 # ou
 yarn dev
 ```
-
-3. Abra [http://localhost:3000](http://localhost:3000) no navegador para visualizar.
