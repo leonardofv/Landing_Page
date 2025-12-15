@@ -18,8 +18,8 @@ export type PostPageProps = {
 
 export function PostPage({ post }: PostPageProps) {
   const publishedDate = new Date(post?.date).toLocaleDateString("pt-BR");
-  // const postUrl = `https://site.set/blog/${post.slug}`;
-  const postUrl = `http://localhost:3000/blog/${post.slug}`;
+  const postUrl = `https://site.set/blog/${post.slug}`;
+  // const postUrl = `http://localhost:3000/blog/${post.slug}`;
 
   return (
     <main className="py-2 text-gray-100 mb-5">

@@ -8,10 +8,17 @@ type BlogPostPageProps = {
     }>;
 };
 
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+    return allPosts.map((post) => ({
+        slug: post.slug
+    }));
+};
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const { slug } = await params;
-    // console.log(slug);
     const post = allPosts.find((post) => post.slug === slug);
 
     //post pode ser undefined
@@ -22,4 +29,4 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     return (
         <PostPage post={post} />
     )
-}
+};
