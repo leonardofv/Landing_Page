@@ -15,16 +15,20 @@ Este é um projeto de Landing Page desenvolvido com [Next.js](https://nextjs.org
 
 ```bash
 npm install
-# ou
-yarn
+pnpm (usado no projeto):
+
+pnpm install
+pnpm dev   # ambiente de desenvolvimento
+pnpm build # build de produção
+pnpm start # iniciar servidor de produção (após build)
+pnpm lint  # rodar lint
+
 ```
 
 2. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# ou
-# site.set — Landing Page e Blog
 
 **site.set** é uma Landing Page com blog construída com **Next.js**, escrita em **TypeScript** e estilizada com **Tailwind CSS**.
 
@@ -40,24 +44,13 @@ npm run dev
 ---
 
 ## 🧰 Tecnologias
-- Next.js 15 (App Router + Pages)
+- Next.js 15
 - TypeScript
-- Tailwind CSS (+ `tailwindcss-animate`)
+- Tailwind CSS
 - Contentlayer (Markdown -> Content)
 - react-markdown + remark-gfm
 - lucide-react, class-variance-authority (CVA), clsx, @radix-ui/react-slot
 - pnpm (package manager)
-
----
-
-## 📁 Estrutura relevante
-- `src/app/` — rotas e páginas (App Router)
-- `src/templates/landing-page/` — estrutura e seções da landing
-- `src/templates/blog/` — listagem e post
-- `src/components/` — componentes reutilizáveis (ui, avatar, search)
-- `src/hooks/` — hooks (use-share, use-clipboard)
-- `posts/` — posts em Markdown (frontmatter lido por Contentlayer)
-- `contentlayer.config.ts` — definição de documentos (Post)
 
 ---
 
@@ -96,29 +89,3 @@ Conteúdo em Markdown...
 2. O Contentlayer expõe automaticamente o post para uso nas páginas (durante `dev` e `build`).
 
 ---
-
-## 🛠️ Observações para desenvolvimento
-- Componente `Search` utiliza query string `q` para filtrar posts no cliente.
-- `Markdown` utiliza `react-markdown` + `remark-gfm` para suporte a tabelas, task lists e links.
-- Componentes UI usam `class-variance-authority` (CVA) para gerenciar variantes.
-
----
-
-## ☁️ Deploy sugerido
-Recomendado: **Vercel** (deploy automático para projetos Next.js). Alternativas: Docker, Netlify, outros hosts que suportem Next.js.
-
----
-
-## ✅ Sugestões / Próximos passos
-- Adicionar `CONTRIBUTING.md` e `CODE_OF_CONDUCT.md` para colaboração pública
-- Incluir testes (Vitest/Jest) e pipeline CI (GitHub Actions)
-- Considerar otimizações de acessibilidade e SEO detalhadas
-
----
-
-## 📄 Licença
-Nenhuma licença especificada. Recomendo adicionar `MIT` ou outra licença apropriada se o repo for público.
-
----
-
-Se quiser, posso abrir um branch, commitar essa mudança e criar um Pull Request no GitHub para você revisar.
