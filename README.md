@@ -5,15 +5,15 @@ Este é um projeto de Landing Page desenvolvido com [Next.js](https://nextjs.org
 ## Funcionalidades
 
 - Layout responsivo e moderno
-- Otimização de fontes com [next/font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
-- Imagens otimizadas com next/image
+- Otimização de fontes com [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
+- Imagens otimizadas com `next/image`
 
 
 ## Como rodar localmente
 
 1. Instale as dependências:
 
-bash
+```bash
 npm install
 pnpm (usado no projeto):
 
@@ -23,11 +23,11 @@ pnpm build # build de produção
 pnpm start # iniciar servidor de produção (após build)
 pnpm lint  # rodar lint
 
-
+```
 
 2. Inicie o servidor de desenvolvimento:
 
-bash
+```bash
 npm run dev
 
 **site.set** é uma Landing Page com blog construída com **Next.js**, escrita em **TypeScript** e estilizada com **Tailwind CSS**.
@@ -57,7 +57,7 @@ npm run dev
 ## 📝 Como adicionar um post (Contentlayer)
 1. Crie um arquivo Markdown em `posts/` com frontmatter YAML:
 
-md
+```md
 ---
 title: "Título do post"
 description: "Resumo curto"
@@ -71,6 +71,6 @@ author:
 Conteúdo em Markdown...
 ```
 
-O Contentlayer expõe automaticamente o post para uso nas páginas (durante dev e build).
+O Contentlayer expõe automaticamente o post para uso nas páginas (durante `dev` e `build`).
 
 ---
