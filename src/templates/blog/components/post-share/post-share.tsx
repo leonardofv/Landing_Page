@@ -1,6 +1,6 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { useShare } from "@/hooks";
+'use client';
+import { Button } from '@/components/ui/button';
+import { useShare } from '@/hooks';
 
 type PostShareProps = {
   url: string;
@@ -8,7 +8,7 @@ type PostShareProps = {
   description: string;
 };
 
-export function PostShare({ url, title, description }: PostShareProps) {
+export const PostShare = ({ url, title, description }: PostShareProps) => {
   const { shareButtons } = useShare({
     url,
     title,
@@ -17,8 +17,8 @@ export function PostShare({ url, title, description }: PostShareProps) {
 
   return (
     <aside className="space-y-6">
-      <div className="bg-gray-700 rounded-lg">
-        <h2 className="hidden md:block font-gray-100 mb-4 text-heading-xs">
+      <div className="rounded-lg bg-gray-700">
+        <h2 className="hidden md:block mb-4 text-heading-xs text-gray-100">
           Compartilhar
         </h2>
 
@@ -26,9 +26,9 @@ export function PostShare({ url, title, description }: PostShareProps) {
           {shareButtons.map((provider) => (
             <Button
               key={provider.provider}
-              variant="outline"
-              className="w-40 md:w-full justify-center md:justify-start gap-2"
               onClick={() => provider.action()}
+              variant="outline"
+              className="w-fit md:w-full justify-start gap-2"
             >
               {provider.icon}
               <span className="hidden md:block">{provider.name}</span>

@@ -1,41 +1,39 @@
-"use client";
-import { useCallback, useEffect, useState } from "react";
+'use client';
+import { useCallback, useEffect, useState } from 'react';
 
-type UseClipBoardProps = {
+type UseClipboardProps = {
   timeout?: number;
 };
 
-export function useClipBoard({ timeout = 2000 }: UseClipBoardProps) {
+export const useClipboard = ({ timeout = 2000 }: UseClipboardProps) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const handleCopy = useCallback(async (text: string) => {
     if (!navigator.clipboard) {
-      console.error("Clipboard não suportado!");
+      console.error('Clipboard não suportado');
       return false;
-    };
+    }
 
     try {
       await navigator.clipboard.writeText(text);
-      setIsCopied(true);
     } catch (error) {
-      console.error(`Erro: ${error}`);
+      console.error('Falha ao copiar o texto: ', error);
       setIsCopied(false);
       return false;
     }
+
+    setIsCopied(true);
   }, []);
 
   useEffect(() => {
     if (isCopied) {
-      const timer = window.setTimeout(() => {
+      const timer = setTimeout(() => {
         setIsCopied(false);
       }, timeout);
 
-      return () => window.clearTimeout(timer);
+      return () => clearTimeout(timer);
     }
   }, [isCopied, timeout]);
 
-  return {
-    isCopied,
-    handleCopy,
-  };
-}
+  return { isCopied, handleCopy };
+};

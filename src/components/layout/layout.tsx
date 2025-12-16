@@ -1,28 +1,33 @@
-import { Inter } from "next/font/google";
-import { Header } from "./header";
-import { Footer } from "./footer";
-import { CallToAction } from "@/templates/landing-page/sections";
+import { Inter, PT_Sans_Caption } from 'next/font/google';
 
-const fontInter = Inter({ 
-    subsets: ['latin'], 
-    weight: ['400', '500'],
-    variable: '--font-inter', 
-}); 
+import { CallToAction } from '@/templates/landing-page/sections';
+import { Footer } from './footer';
+import { Header } from './header';
 
-type LayoutProps =  {
-    children: React.ReactNode;
-}
+type LayoutProps = {
+  children: React.ReactNode;
+};
 
-export function Layout( { children }: LayoutProps) {
-    return (
-        // todos os textos dentro desse <div> vão usar a fonte Inter, sem precisar importar CSS manualmente.
-        <div className={`${fontInter.className} bg-gray-700 relative flex min-h-screen flex-col`}>
-            <Header />
-            <main className="flex-1 flex flex-col mt-10 mb-12">
-                {children}
-            </main>
-            <CallToAction />
-            <Footer />            
-        </div>
-    )
-}
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-inter',
+});
+const ptSansCaption = PT_Sans_Caption({
+  subsets: ['latin'],
+  weight: '700',
+  variable: '--font-sans',
+});
+
+export const Layout = ({ children }: LayoutProps) => {
+  return (
+    <div
+      className={`${inter.className} ${ptSansCaption.className} relative flex min-h-screen flex-col bg-gray-700`}
+    >
+      <Header />
+      <main className="flex-1 flex flex-col mt-10 mb-12">{children}</main>
+      <CallToAction />
+      <Footer />
+    </div>
+  );
+};

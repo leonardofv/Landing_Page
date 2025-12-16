@@ -1,11 +1,7 @@
 type AvatarContentProps = {
-    children: React.ReactNode;
-}
+  children: React.ReactNode;
+};
 
-export function AvatarContent({ children }: AvatarContentProps) {
-    return (
-        <div className="flex flex-col">
-            {children}
-        </div>
-    )
-}
+export const AvatarContent = ({ children }: AvatarContentProps) => {
+  return <div className="flex flex-col">{children}</div>;
+};

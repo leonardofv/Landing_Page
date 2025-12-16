@@ -1,12 +1,11 @@
-
 type AvatarContainerProps = {
-    children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
-export function AvatarContainer({ children }: AvatarContainerProps) {
-    return (
-        <div className="flex items-center gap-3">
-            {children}
-        </div>
-    )
-}
+export const AvatarContainer = ({ children }: AvatarContainerProps) => {
+  return (
+    <div className="flex items-center gap-3">
+      {children}
+    </div>
+  )
+};

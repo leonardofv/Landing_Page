@@ -1,1 +1,1 @@
-export * from  './useclip-board';
+export * from './use-clipboard';
